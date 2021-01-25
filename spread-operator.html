@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+
+<body>
+
+    <script>
+        const udemy = 'udemy';
+
+        const letters = [...udemy];
+
+        console.log(letters);
+
+        const boys = ['john', 'peter', 'bob'];
+        const girls = ['susan', 'anna', 'melissa'];
+
+        const bestFriend = 'arnold';
+
+        const friends = [boys, girls, bestFriend];
+
+        console.log(friends);
+
+        const friends2 = [...boys, ...girls, bestFriend];
+
+        console.log(friends2);
+
+        const friends3 = [...boys, bestFriend, ...girls];
+
+        console.log(friends3);
+
+        // Reference
+
+        const newFriends = friends2;
+
+        newFriends[0] = 'nancy'; // affects both arrays
+
+        console.log(friends2);
+
+        console.log(newFriends);
+
+        const newFriends2 = [...friends3]; // makes a new copy
+
+        newFriends2[0] = 'lucy'; // doesn't affect both arrays
+
+        console.log(friends3);
+
+        console.log(newFriends2);
+
+        // ES8 Objects
+
+        const person = {
+            name: 'john', job: 'developer'
+        }
+
+        const newPerson = { ...person, city: 'chicago', name: 'peter' };
+
+        console.log(newPerson);
+
+        console.log(person);
+
+
+    </script>
+
+</body>
+
+</html>

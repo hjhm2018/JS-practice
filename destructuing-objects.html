@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Objects</title>
+</head>
+
+<body>
+
+    <script>
+        const bob = {
+            first: 'bob',
+            last: 'sanders',
+            city: 'chicago',
+            siblings: {
+                sister: 'jane'
+            }
+        }
+
+        const { first, last: lastName, city, siblings: { sister: favoriteSibling } } = bob;
+
+        // you can give alias to properties
+        console.log(first, lastName, city, favoriteSibling);
+
+        // function printPerson(person) {
+        //     console.log(person.first);
+
+        //     const { first, last } = person;
+
+        //     console.log(first, last);
+        // }
+
+        function printPerson({ first, last, city, siblings: { sister } }) {
+
+            console.log(first, last, city, sister);
+        }
+
+        printPerson(bob);
+
+
+        // const firstName = bob.first;
+        // const lastName = bob.last;
+        // const sister = bob.siblings.sister;
+
+        // console.log(firstName, lastName, sister);
+
+    </script>
+
+</body>
+
+</html>

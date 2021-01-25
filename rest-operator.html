@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Operator</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        const fruits = ['apple', 'orange', 'lemon', 'banana', 'pear'];
+
+        const [first, second, ...restOfFruits] = fruits;
+
+        console.log(first, restOfFruits);
+
+        const specificFruit = restOfFruits.find((fruit) => fruit === 'lemon');
+
+        console.log(specificFruit);
+
+        // objects
+        const person = {
+            name: 'john', lastName: 'smith', job: 'developer',
+        }
+
+
+
+        // const { name, ...rest } = person;
+
+        // console.log(name, rest);
+
+
+        const { job, ...rest } = person;
+
+        console.log(job, rest);
+
+        // Functions
+
+        const getAverage = (name, ...scores) => {
+            console.log(name);
+            console.log(scores);
+
+            const average = scores.reduce((total, item) => { return total += item }, 0) / scores.length;
+
+            console.log(average);
+        }
+
+        // getAverage(person.name, 89, 76, 81, 100);
+
+        const testScores = [23, 45, 67, 89];
+
+        getAverage(person.name, ...testScores);
+
+    </script>
+
+</body>
+
+</html>

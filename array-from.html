@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array From</title>
+
+    <style>
+        .container {
+            width: 90vw;
+            margin: 2rem auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 class="title">Array.from</h2>
+    <div class="container">
+        <h2 class="text">hello</h2>
+        <h2 class="text">person</h2>
+        <h2 class="text">hello</h2>
+    </div>
+
+    <script>
+        const udemy = 'udemy';
+
+        // console.log(Array.from(udemy));
+
+        const text = document.querySelectorAll('.text');
+        console.log(text);
+
+
+        const newText = Array.from(text).find((item) => item.textContent === 'person');
+
+        // console.log(newText);
+
+        const items = Array.from({ length: 120 }, (_, index) => {
+            return index
+        });
+
+        const itemsPerPage = 10;
+
+        const pages = Math.ceil(items.length / itemsPerPage);
+
+        const newItems = Array.from({ length: pages }, (_, index) => {
+            const start = index * itemsPerPage;
+
+            const tempItems = items.slice(start, start + itemsPerPage);
+
+            return tempItems;
+        })
+
+        console.log(items);
+        console.log(pages);
+
+
+
+        // const letters = [...udemy];
+
+        // const boys = ['john', 'peter', 'bob'];
+        // const girls = ['susan', 'anna', 'melissa'];
+
+        // const bestFriend = 'arnold';
+
+        // const person = {
+        //     name: 'john', job: 'developer'
+        // }
+
+    </script>
+
+</body>
+
+</html>

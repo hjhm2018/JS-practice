@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter and Find</title>
+</head>
+
+<body>
+
+    <script>
+        const people = [
+            {
+                name: 'bob',
+                age: 20,
+                position: 'developer',
+            },
+            {
+                name: 'maria',
+                age: 25,
+                position: 'designer',
+            },
+            {
+                name: 'susy',
+                age: 30,
+                position: 'the boss',
+            },
+            {
+                name: 'anna',
+                age: 35,
+                position: 'intern',
+            },
+            {
+                name: 'luisa',
+                age: 30,
+                position: 'designer',
+            },
+
+        ];
+
+        const fruits = ['orange', 'pear', 'lemon'];
+
+        // Filter 
+
+        const youngPeople = people.filter((person) => person.age <= 25);
+
+        console.log(youngPeople);
+
+        const developers = people.filter(person => person.position === 'developer');
+
+        console.log(developers);
+
+        // No match
+
+        const seniorDevs = people.filter(item => item.position === 'senior dev');
+
+        console.log(seniorDevs);
+
+        // Find
+
+        const bob = people.find(person => person.name === 'bob');
+
+        console.log(bob);
+
+        const fruit = fruits.find(item => item === 'lemon');
+
+        console.log(fruit);
+
+        // no match
+
+        const oldPerson = people.find(person => person.age > 35);
+
+        console.log(oldPerson);
+
+        // multiple matches
+
+        const randomPerson = people.find(person => person.age < 30);
+
+        console.log(randomPerson);
+
+        const anna = people.filter(person => person.name === 'anna');
+
+        console.log(anna[0]);
+
+        // filter returns an array of objects
+
+        // find returns a single object or string, and just the first match 
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

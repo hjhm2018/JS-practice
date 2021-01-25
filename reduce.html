@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce</title>
+</head>
+
+<body>
+
+    <script>
+        const staff = [
+            {
+                name: 'bob',
+                age: 20,
+                position: 'developer',
+                salary: 100
+            },
+            {
+                name: 'maria',
+                age: 25,
+                position: 'designer',
+                salary: 300
+            },
+            {
+                name: 'susy',
+                age: 30,
+                position: 'the boss',
+                salary: 400
+            },
+            {
+                name: 'anna',
+                age: 35,
+                position: 'intern',
+                salary: 10
+            },
+            {
+                name: 'luisa',
+                age: 30,
+                position: 'designer',
+                salary: 300
+            },
+
+        ];
+
+        const dailyTotal = staff.reduce((total, person) => {
+            //total is the total of all calculations
+            //person is the current value of the iteration
+            // console.log(total); 
+            // console.log(person.salary);
+
+            total += person.salary;
+
+            return total
+        }, 0) // 0 is the initial value
+
+        console.log(dailyTotal);
+
+
+    </script>
+
+</body>
+
+</html>
